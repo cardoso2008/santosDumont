@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santos Dumont - O Pai da Aviação</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- Menu Lateral -->
+    <nav id="sideMenu" class="side-menu">
+        <ul>
+            <li><a href="#raizes" data-section="raizes">Raízes</a></li>
+            <li><a href="#sonho" data-section="sonho">Sonho</a></li>
+            <li><a href="#dirigiveis" data-section="dirigiveis">Dirigíveis</a></li>
+            <li><a href="#bis14" data-section="bis14">14-Bis</a></li>
+            <li><a href="#legado" data-section="legado">Legado</a></li>
+        </ul>
+    </nav>
+
+    <!-- Linha do Tempo -->
+    <div id="timeline" class="timeline">
+        <div class="timeline-point" data-section="raizes">
+            <span class="timeline-label">Raízes</span>
+        </div>
+        <div class="timeline-point" data-section="sonho">
+            <span class="timeline-label">Sonho</span>
+        </div>
+        <div class="timeline-point" data-section="dirigiveis">
+            <span class="timeline-label">Dirigíveis</span>
+        </div>
+        <div class="timeline-point" data-section="bis14">
+            <span class="timeline-label">14-Bis</span>
+        </div>
+        <div class="timeline-point" data-section="jogo">
+            <span class="timeline-label">Jogo</span>
+        </div>
+        <div class="timeline-point" data-section="legado">
+            <span class="timeline-label">Legado</span>
+        </div>
+    </div>
+
+    <!-- Seção 1: Hero -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Sonhar é o primeiro passo para voar</h1>
+            <button id="startBtn" class="btn-hero">Iniciar Visita</button>
+        </div>
+    </section>
+
+    <!-- Seção 2: Raízes e Infância -->
+    <section id="raizes" class="raizes-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5">
+                    <div class="image-container">
+                        <div class="placeholder-image" style="background-color: #8b7355;">
+                            <!-- <span>Foto da Fazenda Cabangu</span> -->
+                            <img src="img/fazenda.jpg" style="width: 100%;">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <h2 class="section-title">Raízes e Infância</h2>
+                    <p class="poetic-text">
+                        Entre cafezais e horizontes de Minas,<br>
+                        nascia o menino que olhava o céu e via futuro.
+                    </p>
+                    <p class="section-text">
+                        Alberto Santos Dumont nasceu em 20 de julho de 1873, na Fazenda Cabangu, em Minas Gerais. 
+                        Filho de um próspero cafeicultor, desde cedo demonstrou curiosidade pela mecânica e pelas máquinas 
+                        que operavam na fazenda de sua família.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Flip Cards -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="flip-cards-title">Curiosidades da Infância</h3>
+                </div>
+            </div>
+            <div class="row flip-cards-container">
+                <div class="col-md-4 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-icon">⚙️</div>
+                                <h4>Curiosidade</h4>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Desde criança, Santos Dumont desmontava relógios e brinquedos para entender seu funcionamento.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-icon">👨‍👩‍👦</div>
+                                <h4>Família</h4>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Seu pai, Henrique Dumont, era engenheiro e incentivou o interesse do filho pela tecnologia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-icon">📚</div>
+                                <h4>Leitura</h4>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Era apaixonado por Júlio Verne e sonhava em realizar as aventuras descritas nos livros.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-icon">🚂</div>
+                                <h4>Locomotivas</h4>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Fascinado pelas locomotivas da fazenda, passava horas observando seu funcionamento.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-icon">🎈</div>
+                                <h4>Balões</h4>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Aos 12 anos, teve seu primeiro contato com balões de ar quente, que o encantaram profundamente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-icon">🌟</div>
+                                <h4>Sonhador</h4>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Desde pequeno, sonhava em voar e explorar os céus como os pássaros.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: O Sonho de Voar -->
+    <section id="sonho" class="sonho-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h2 class="section-title">O Sonho de Voar</h2>
+                    <p class="poetic-text">
+                        Ele lia Júlio Verne, desenhava balões,<br>
+                        e o impossível virava projeto.
+                    </p>
+                    <p class="section-text">
+                        Após mudar-se para Paris em 1891, Santos Dumont dedicou-se intensamente ao estudo da aeronáutica. 
+                        A capital francesa era o centro mundial da aviação experimental, e foi lá que ele começou a transformar 
+                        seus sonhos de infância em realidade concreta.
+                    </p>
+                    <div class="interactive-icons">
+                        <div class="icon-item" data-tooltip="Estudou física e mecânica em Paris">
+                            <span class="icon">📐</span>
+                            <p>Estudos</p>
+                        </div>
+                        <div class="icon-item" data-tooltip="Construiu sua primeira oficina em 1897">
+                            <span class="icon">🔧</span>
+                            <p>Oficina</p>
+                        </div>
+                        <div class="icon-item" data-tooltip="Realizou seus primeiros voos em balões livres">
+                            <span class="icon">🎈</span>
+                            <p>Experimentos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="image-container">
+                        <div class="placeholder-image" style="background-color: #7c6a55;">
+                            <img src="img/img3.jpg" style="width: 100%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: A Era dos Dirigíveis -->
+    <section id="dirigiveis" class="dirigiveis-section">
+        <div class="container">
+            <h2 class="section-title text-center">A Era dos Dirigíveis</h2>
+            <p class="poetic-text text-center">
+                Entre Paris e o vento,<br>
+                um brasileiro fez do ar sua estrada.
+            </p>
+            
+            <div class="dirigiveis-timeline">
+                <div class="dirigivel-item" data-dirigivel="1">
+                    <div class="placeholder-image-small" style="background-color: #5a5a5a;">
+                        <span>Nº 1</span>
+                    </div>
+                </div>
+                <div class="dirigivel-item" data-dirigivel="2">
+                    <div class="placeholder-image-small" style="background-color: #5a5a5a;">
+                        <span>Nº 2</span>
+                    </div>
+                </div>
+                <div class="dirigivel-item" data-dirigivel="3">
+                    <div class="placeholder-image-small" style="background-color: #5a5a5a;">
+                        <span>Nº 3</span>
+                    </div>
+                </div>
+                <div class="dirigivel-item" data-dirigivel="4">
+                    <div class="placeholder-image-small" style="background-color: #5a5a5a;">
+                        <span>Nº 4</span>
+                    </div>
+                </div>
+                <div class="dirigivel-item" data-dirigivel="5">
+                    <div class="placeholder-image-small" style="background-color: #5a5a5a;">
+                        <span>Nº 5</span>
+                    </div>
+                </div>
+                <div class="dirigivel-item" data-dirigivel="6">
+                    <div class="placeholder-image-small" style="background-color: #5a5a5a;">
+                        <span>Nº 6</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal para detalhes dos dirigíveis -->
+            <div id="dirigivelModal" class="dirigivel-modal">
+                <div class="modal-content-custom">
+                    <span class="close-modal">&times;</span>
+                    <h3 id="modalTitle"></h3>
+                    <p id="modalDate"></p>
+                    <img id="modalImg" class="img-fluid mt-3" alt="Imagem do Dirigível" style="margin-bottom: 2%;">
+                    <p id="modalDescription"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: O 14-Bis -->
+    <section id="bis14" class="bis14-section">
+        <div class="container">
+            <h2 class="section-title text-center">O 14-Bis</h2>
+            <p class="poetic-text text-center">
+                No Campo de Bagatelle,<br>
+                o sonho deixou o chão.
+            </p>
+            
+            <div class="bis14-container">
+                <div class="placeholder-image-large" id="bis14Image">
+                    <img src="img/14bis.jpg" style="width: 100%; height: 100%;">
+                    <div class="bis14-hotspot" style="top: 35%; left: 40%;" data-info="Asas: estrutura de bambu e seda, com 10 metros de envergadura">
+                        <div class="hotspot-marker">+</div>
+                    </div>
+                    <div class="bis14-hotspot" style="top: 60%; left: 30%;" data-info="Motor: Antoinette de 50 HP, revolucionário para a época">
+                        <div class="hotspot-marker">+</div>
+                    </div>
+                    <div class="bis14-hotspot" style="top: 54%; left: 70%;" data-info="Estrutura: madeira e tecido, pesando apenas 290 kg">
+                        <div class="hotspot-marker">+</div>
+                    </div>
+                </div>
+                
+                <div class="bis14-info">
+                    <h3>23 de outubro de 1906</h3>
+                    <p>
+                        Nesta data histórica, Santos Dumont realizou o primeiro voo homologado da história da aviação, 
+                        percorrendo 60 metros a uma altura de 2 a 3 metros do solo, diante de uma comissão oficial 
+                        e de milhares de testemunhas no Campo de Bagatelle, em Paris.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 8: O Legado e o Futuro do Sonho -->
+    <section id="legado" class="legado-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="image-container">
+                        <div class="placeholder-image">
+                            <img src="img/legado.jpg" width="100%">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="section-title">O Legado e o Futuro do Sonho</h2>
+                    <p class="poetic-text">
+                        Ele voou — e ensinou o mundo<br>
+                        que o céu é só o começo.
+                    </p>
+                    <p class="section-text">
+                        Santos Dumont não apenas conquistou os céus, mas democratizou o sonho de voar. 
+                        Suas invenções e sua generosidade em compartilhar conhecimento inspiraram gerações 
+                        de aviadores e engenheiros. Hoje, seu legado vive em cada aeronave que cruza os céus, 
+                        em cada sonhador que ousa desafiar o impossível.
+                    </p>
+                    <p class="section-text">
+                        O brasileiro que ensinou o mundo a voar permanece como símbolo de inovação, 
+                        coragem e do espírito humano que não conhece limites.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+

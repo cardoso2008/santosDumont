@@ -1,0 +1,771 @@
+/* ===== RESET E CONFIGURAÇÕES GERAIS ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cobre: #b87333;
+    --cobre-hover: #c99241;
+    --bronze-escuro: #7c6a55;
+    --grafite: #3f3f3f;
+    --grafite-escuro: #3b3b3b;
+    --cinza-metalico: #c2c5c7;
+    --cinza-gradiente: #8a8b8f;
+    --bege-antigo: #d6ccb5;
+    --cinza-escuro: #2f2f2f;
+    --azul-cinza: #7f8b92;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--grafite-escuro);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+section {
+    min-height: 100vh;
+    padding: 80px 0;
+    position: relative;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--grafite-escuro);
+}
+
+.poetic-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.8;
+    color: var(--bronze-escuro);
+    margin: 2rem 0;
+}
+
+.section-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* ===== PLACEHOLDERS DE IMAGENS ===== */
+.placeholder-image,
+.placeholder-image-small,
+.placeholder-image-large {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.placeholder-image {
+    width: 100%;
+    height: 400px;
+}
+
+.placeholder-image-small {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.placeholder-image-large {
+    width: 100%;
+    height: 500px;
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.image-container:hover .placeholder-image {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+}
+
+/* ===== MENU LATERAL ===== */
+.side-menu {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 20px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu li {
+    margin: 15px 0;
+}
+
+.side-menu a {
+    text-decoration: none;
+    color: var(--grafite);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    display: block;
+    border-radius: 5px;
+}
+
+.side-menu a:hover,
+.side-menu a.active {
+    color: var(--cobre);
+    background: rgba(184, 115, 51, 0.1);
+    transform: translateX(5px);
+}
+
+/* ===== LINHA DO TEMPO ===== */
+.timeline {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+
+.timeline-point {
+    width: 20px;
+    height: 20px;
+    background: var(--cinza-metalico);
+    border-radius: 50%;
+    margin: 30px 0;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline-point::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.timeline-point.active {
+    background: var(--cobre);
+    transform: scale(1.3);
+}
+
+.timeline-point.active::before {
+    width: 6px;
+    height: 6px;
+}
+
+.timeline-label {
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    font-size: 0.85rem;
+    color: var(--grafite);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.timeline-point:hover .timeline-label {
+    opacity: 1;
+}
+
+/* ===== SEÇÃO 1: HERO ===== */
+.hero-section {
+    background-image: url(img/capaHero2.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: linear-gradient(135deg, var(--cinza-metalico) 0%, var(--cinza-gradiente) 100%); */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(184, 115, 51, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(138, 139, 143, 0.1) 0%, transparent 50%);
+    animation: heroGlow 8s ease-in-out infinite;
+}
+
+@keyframes heroGlow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 10;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    line-height: 1.1;
+}
+
+.btn-hero {
+    background: var(--cobre);
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(184, 115, 51, 0.3);
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-hero:hover {
+    background: var(--cobre-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(184, 115, 51, 0.4);
+}
+
+.btn-hero:active {
+    transform: translateY(-1px);
+}
+
+/* ===== SEÇÃO 2: RAÍZES E INFÂNCIA ===== */
+.raizes-section {
+    background: var(--bege-antigo);
+    background-image: 
+       
+        linear-gradient(rgba(214, 204, 181, 0.9), rgba(214, 204, 181, 0.9)),
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.02) 2px, rgba(0, 0, 0, 0.02) 4px);
+}
+
+.flip-cards-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--grafite-escuro);
+}
+
+.flip-cards-container {
+    margin-top: 2rem;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1.5s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card-front {
+    background: linear-gradient(135deg, var(--cobre) 0%, var(--bronze-escuro) 100%);
+    color: white;
+}
+
+.flip-card-back {
+    background: var(--grafite);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.flip-card-front h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.flip-card-back p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* ===== SEÇÃO 3: O SONHO DE VOAR ===== */
+.sonho-section {
+    background: linear-gradient(135deg, var(--bronze-escuro) 0%, #4a4a4a 100%);
+    color: white;
+}
+
+.sonho-section .section-title,
+.sonho-section .poetic-text {
+    color: white;
+}
+
+.sonho-section .section-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.interactive-icons {
+    display: flex;
+    gap: 30px;
+    margin-top: 3rem;
+}
+
+.icon-item {
+    text-align: center;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    flex: 1;
+}
+
+.icon-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(5px);
+}
+
+.icon-item .icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.icon-item p {
+    font-weight: 600;
+    margin: 0;
+}
+
+.icon-item::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--grafite-escuro);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.icon-item:hover::after {
+    opacity: 1;
+}
+
+/* ===== SEÇÃO 4: A ERA DOS DIRIGÍVEIS ===== */
+.dirigiveis-section {
+    background: var(--grafite);
+    background-image: 
+        linear-gradient(rgba(63, 63, 63, 0.95), rgba(63, 63, 63, 0.95)),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.03) 4px);
+    color: white;
+}
+
+.dirigiveis-section .section-title,
+.dirigiveis-section .poetic-text {
+    color: white;
+}
+
+.dirigiveis-timeline {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.dirigivel-item {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dirigivel-item:hover {
+    transform: scale(1.15);
+}
+
+.dirigivel-item:hover .placeholder-image-small {
+    box-shadow: 0 8px 25px rgba(184, 115, 51, 0.5);
+}
+
+/* Modal dos Dirigíveis */
+.dirigivel-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content-custom {
+    background: linear-gradient(135deg, var(--grafite) 0%, var(--bronze-escuro) 100%);
+    margin: 10% auto;
+    padding: 40px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 600px;
+    color: white;
+    position: relative;
+    animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    color: white;
+    float: right;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: var(--cobre);
+}
+
+.modal-content-custom h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content-custom p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* ===== SEÇÃO 5: O 14-BIS ===== */
+.bis14-section {
+    background: linear-gradient(to bottom, var(--azul-cinza) 0%, #a0adb5 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.bis14-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 40%),
+        radial-gradient(ellipse at 70% 60%, rgba(255, 255, 255, 0.2) 0%, transparent 40%);
+    animation: cloudsMove 20s ease-in-out infinite;
+}
+
+@keyframes cloudsMove {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(30px); }
+}
+
+.bis14-container {
+    position: relative;
+    z-index: 10;
+}
+
+#bis14Image {
+    margin: 3rem auto;
+    animation: bis14Fly 2s ease-out;
+}
+
+@keyframes bis14Fly {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.bis14-hotspot {
+    position: absolute;
+    cursor: pointer;
+}
+
+.hotspot-marker {
+    width: 30px;
+    height: 30px;
+    background: var(--cobre);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    animation: pulse 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(184, 115, 51, 0.7); }
+    50% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(184, 115, 51, 0); }
+}
+
+.hotspot-marker:hover {
+    background: var(--cobre-hover);
+    transform: scale(1.2);
+}
+
+.bis14-hotspot::after {
+    content: attr(data-info);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--grafite-escuro);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    margin-top: 10px;
+    z-index: 100;
+}
+
+.bis14-hotspot:hover::after {
+    opacity: 1;
+}
+
+.bis14-info {
+    text-align: center;
+    margin-top: 3rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.bis14-info h3 {
+    color: var(--cobre);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.bis14-info p {
+    color: var(--grafite-escuro);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* ===== SEÇÃO 8: LEGADO ===== */
+.legado-section {
+    background: linear-gradient(to bottom, var(--bronze-escuro) 0%, var(--cobre-hover) 100%);
+    color: white;
+    position: relative;
+}
+
+.legado-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 0%, transparent 100%);
+}
+
+.legado-section .section-title,
+.legado-section .poetic-text {
+    color: white;
+    position: relative;
+    z-index: 10;
+}
+
+.legado-section .section-text {
+    color: rgba(255, 255, 255, 0.95);
+    position: relative;
+    z-index: 10;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+    
+    .side-menu {
+        left: 10px;
+        padding: 15px 10px;
+    }
+    
+    .timeline {
+        right: 10px;
+    }
+    
+    .interactive-icons {
+        flex-direction: column;
+    }
+    
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .game-canvas {
+        width: 100%;
+        max-width: 400px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .poetic-text {
+        font-size: 1.2rem;
+    }
+    
+    .side-menu {
+        display: none;
+    }
+    
+    .flip-card {
+        height: 200px;
+    }
+    
+    .flip-icon {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .btn-hero {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .timeline {
+        display: none;
+    }
+}
+
